@@ -1,0 +1,23 @@
+name: CI/CD - Streamlit Image
+
+on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+          - info
+  push:
+    paths-ignore:
+      - '.github/**'
+      - 'tests/**'
+      - 'CHANGELOG.md'
+      - '.gitignore'
+      - '.prefectignore'
+      - 'README.md'
+    branches:
+      - 'main'
+
